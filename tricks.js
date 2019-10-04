@@ -7,7 +7,7 @@
   const RANDOM_ITEM_FROM_ARRAY = 4;
   const RANDOM_NUMBER_IN_SPECIFIC_RANGE = 5;
   const SHUFFLE = 6;
-  const APPLY = 7;
+  const DECOMPOSITION = 7;
   const EMPTY_ARRAY = 8;
   const TRUNCATE_ARRAY = 9;
   const OR_AND_CONDITIONS = 10;
@@ -16,7 +16,7 @@
   const MERGE_OBJECTS = 13;
   const GET_RID_OF_BAD_VALUES = 14;
 
-  let trick = SHORT_CUTS;
+  let trick = GET_RID_OF_BAD_VALUES;
 
   switch (trick) {
     case SHORT_CUTS:
@@ -37,8 +37,8 @@
     case SHUFFLE:
       testShuffle();
       break;
-    case APPLY:
-      testApply();
+    case DECOMPOSITION:
+      testDecomposition();
       break;
     case EMPTY_ARRAY:
       testEmptyArray();
@@ -100,9 +100,19 @@
   }
 
   function testMergeObjects() {
-    const person = { name: "David Walsh", gender: "Male" };
-    const tools = { computer: "Mac", editor: "Atom" };
-    const attributes = { handsomeness: "Extreme", hair: "Brown", eyes: "Blue" };
+    const person = {
+      name: "David Walsh",
+      gender: "Male"
+    };
+    const tools = {
+      computer: "Mac",
+      editor: "Atom"
+    };
+    const attributes = {
+      handsomeness: "Extreme",
+      hair: "Brown",
+      eyes: "Blue"
+    };
 
     const summary = { ...person, ...tools, ...attributes };
 
@@ -153,10 +163,12 @@
       html + '<p> New value : "' + myArray.toString() + '"</p>';
   }
 
-  function testApply() {
+  function testDecomposition() {
     let numbers = [5, 458, 120, -215, 228, 400, 122205, -85411];
-    let maxInNumbers = Math.max.apply(Math, numbers); // equivalent to Math.max(5, 458, 120 ...)
-    let minInNumbers = Math.min.apply(Math, numbers);
+    let maxInNumbers = Math.max(...numbers);
+    // equivalent to Math.max(5, 458, 120 ...) ou
+    // Math.max.apply(Math, numbers);
+    let minInNumbers = Math.min(...numbers);
     let html =
       "<p>" +
       numbers.toString() +
@@ -171,7 +183,8 @@
   function testShuffle() {
     let numbers = [5, 458, 120, -215, 228, 400, 122205, -85411];
     numbers = numbers.sort(function() {
-      return Math.random() - 0.5; // Value between -0.5 and 0.5 (exclude) -> false or true
+      // Value between -0.5 and 0.5 (exclude) -> false or true
+      return Math.random() - 0.5;
     });
     resultsElement.innerHTML = numbers.toString();
   }
@@ -193,11 +206,11 @@
 
   function testAssignationError() {
     let a = 0;
-    if ((a = 0)) {
-      console.log("a est égal à 0");
-    } else {
-      console.log("Tiens, ça ne lance pas une erreur!");
-    }
+    // if ((a = 0)) {
+    //   console.log("a est égal à 0");
+    // } else {
+    //   console.log("Tiens, ça ne lance pas une erreur!");
+    // }
     // if(0 = a)
     // {
     // 	console.log('a est égal à 0');

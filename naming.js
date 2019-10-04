@@ -15,7 +15,7 @@
 
   // Utiliser des verbes pour les fonctions et méthodes
 
-  function getProduct() {
+  function getProduct(id) {
     let product = "WC";
     return product;
   }
@@ -29,13 +29,14 @@
     // Save this product in your amazing database
     return true;
   }
-  // Utiliser 'is' pour les fonctions qui retournent 'toujours' des valeurs booléennes
+  // Utiliser 'is' pour les fonctions qui retournent 'toujours'
+  // des valeurs booléennes
 
   function isReadable(book) {
     return true | false;
   }
 
-  // Prononcable!!!
+  // Prononçable!!!
 
   function recdptrl() {
     // WTF?? : Received patrol? or Record department role?

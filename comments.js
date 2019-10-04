@@ -17,7 +17,8 @@
 
   function divide(a, b) {
     if (b == 0) {
-      // Division par zéro!            <-- C'était suffisamment clair sans commentaire!
+      // Division par zéro! <-- C'était suffisamment clair
+      //												 sans commentaire!
       return false;
     }
     return +a / +b;
@@ -25,8 +26,8 @@
 
   // **********************************************************************
 
-  // Éviter les "ghost comments" ! Ils doievent être effacés, si vous
-  // voulez les récupérer : Git est là pour ça.
+  // Éviter les "ghost comments" ! Ils doievent être effacés,
+  // si vous voulez les récupérer : Git est là pour ça.
 
   function calculateHard(a, b) {
     // a = Math.sin(a) * Math.cos(b) + Math.cos(a) * Math.sin(b)
@@ -50,7 +51,8 @@
   // **********************************************************************
 
   function addSetEntry(set, value) {
-    /*    Don't return `set.add` because it's not chainable in IE 11.  */
+    /*    Don't return `set.add` because it's not chainable 
+					in IE 11.  */
     set.add(value);
     return set;
   }
@@ -64,7 +66,8 @@
 
   // **********************************************************************
 
-  // Ajouter une url lorsqu'un on fait un copier-coller d'un site web...
+  // Ajouter une url lorsqu'un on fait un copier-coller d'un site
+  // web...
   // From : https://davidwalsh.name/essential-javascript-functions
 
   var getAbsoluteUrl = (function() {
